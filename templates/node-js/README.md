@@ -52,21 +52,13 @@ cp .env.example .env
 ## Project Structure
 
 src/
-
 ├── config/ # Configuration files
-
 ├── controllers/ # Route controllers
-
 ├── middleware/ # Custom middleware
-
 ├── models/ # Database models
-
 ├── routes/ # API routes
-
 ├── services/ # Business logic
-
 ├── utils/ # Utility functions
-
 └── app.js # App entry point
 
 ## Available Scripts
