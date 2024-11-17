@@ -12,6 +12,7 @@ A lightweight and flexible CLI tool that helps you quickly scaffold new projects
 ## Installation
 
 ```bash
+git clone https://github.com/iwint/red-cli.git
 npm install -g red-cli
 ```
 
