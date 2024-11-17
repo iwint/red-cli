@@ -13,6 +13,7 @@ A lightweight and flexible CLI tool that helps you quickly scaffold new projects
 
 ```bash
 npm install -g red-js-cli
+git clone https://github.com/iwint/red-cli.git
 ```
 
 ## Usage
