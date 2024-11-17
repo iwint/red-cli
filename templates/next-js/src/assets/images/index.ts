@@ -1,0 +1,3 @@
+/*
+export { IconName } from './IconName';
+*/
