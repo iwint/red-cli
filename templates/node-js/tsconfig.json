@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "module": "Preserve",
+        "esModuleInterop": true,
+        "target": "es2017",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "./dist",
+        "rootDir": "./src"
+    },
+    "lib": ["es2015"],
+    "ts-node": {
+        "esm": true,
+        "compilerOptions": {
+            "module": "nodenext"
+        }
+    }
+}

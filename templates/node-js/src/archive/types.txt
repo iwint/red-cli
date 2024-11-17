@@ -1,0 +1,28 @@
+interface SignalingMessage {
+    type: 'offer' | 'answer' | 'candidate' | 'chat' | 'roomState';
+    payload: any;
+    roomId: string;
+    userId: string;
+    timestamp: number;
+}
+
+interface ChatMessage {
+    type: 'chat';
+    payload: {
+        message: string;
+        sender: string;
+        timestamp: number;
+    };
+    roomId: string;
+    userId: string;
+}
+
+interface RoomStateMessage {
+    type: 'roomState';
+    payload: {
+        participants: string[];
+        activeStreams: string[];
+        settings: RoomSettings;
+    };
+    roomId: string;
+}

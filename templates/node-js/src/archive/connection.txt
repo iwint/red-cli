@@ -1,0 +1,74 @@
+class ZegoConnection {
+    constructor() {
+        this.ws = null;
+        this.reconnectAttempts = 0;
+        this.maxReconnectAttempts = 5;
+    }
+
+    connect() {
+        return new Promise((resolve, reject) => {
+            try {
+                this.ws = new WebSocket('wss://signaling.zegocloud.com');
+
+                this.ws.onopen = () => {
+                    console.log('Connected to ZEGO signaling server');
+                    this.reconnectAttempts = 0;
+                    resolve();
+                };
+
+                this.ws.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    this.handleMessage(data);
+                };
+
+                this.ws.onclose = () => {
+                    console.log('Disconnected from signaling server');
+                    this.attemptReconnect();
+                };
+
+                this.ws.onerror = (error) => {
+                    console.error('WebSocket error:', error);
+                    reject(error);
+                };
+
+            } catch (error) {
+                reject(error);
+            }
+        });
+    }
+
+    handleMessage(data) {
+        switch(data.type) {
+            case 'offer':
+                // Handle WebRTC offer
+                break;
+            case 'answer':
+                // Handle WebRTC answer
+                break;
+            case 'candidate':
+                // Handle ICE candidate
+                break;
+            case 'chat':
+                // Handle chat message
+                break;
+            case 'roomState':
+                // Handle room state updates
+                break;
+        }
+    }
+
+    send(message) {
+        if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+            this.ws.send(JSON.stringify(message));
+        }
+    }
+
+    attemptReconnect() {
+        if (this.reconnectAttempts < this.maxReconnectAttempts) {
+            this.reconnectAttempts++;
+            setTimeout(() => {
+                this.connect();
+            }, 1000 * Math.pow(2, this.reconnectAttempts));
+        }
+    }
+}
