@@ -1,7 +1,7 @@
 {
   "name": "red-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "A command-line interface tool for generating project templates",
   "main": "index.js",
   "type": "module",
   "private":"true",
@@ -11,7 +11,7 @@
   "bin": {
     "red-cli": "./index.js"
   },
-  "author": "",
+  "author": "Iwin Issac",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.26.0",
