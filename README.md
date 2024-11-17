@@ -12,7 +12,7 @@ A lightweight and flexible CLI tool that helps you quickly scaffold new projects
 ## Installation
 
 ```bash
-npm install -g red-cli
+npm install -g red-js-cli
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ npm install -g red-cli
 Simply run:
 
 ```bash
-red-cli
+red-js-cli
 ```
 
 Follow the interactive prompts:
