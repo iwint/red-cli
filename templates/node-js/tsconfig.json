@@ -2,19 +2,20 @@
     "compilerOptions": {
         "forceConsistentCasingInFileNames": true,
         "strict": true,
-        "module": "Preserve",
+        "module": "CommonJS",
         "esModuleInterop": true,
         "target": "es2017",
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "./dist",
-        "rootDir": "./src"
+        "rootDir": "./src",
+        "resolveJsonModule": true
     },
     "lib": ["es2015"],
     "ts-node": {
         "esm": true,
         "compilerOptions": {
-            "module": "nodenext"
+            "module": "CommonJS"
         }
     }
 }

@@ -2,9 +2,8 @@ import { RequestHandler } from "express";
 import passport from "passport";
 import ApiError from "../utils/api-error";
 import httpStatus from "http-status";
-import logger from "../config/logger";
 
-const verifyCallBack =
+const verifyCallback =
     (req: any, resolve: any, reject: any): passport.AuthenticateCallback =>
     (err, user, info) => {
         if (err || info || !user) {
@@ -14,10 +13,9 @@ const verifyCallBack =
         resolve();
     };
 
-const auth = (): RequestHandler => (req, res, next) => {
-    logger.info(req.headers);
+const auth = (): RequestHandler => async (req, res, next) => {
     return new Promise((resolve, reject) => {
-        passport.authenticate("jwt", { session: false });
+        passport.authenticate("jwt", { session: false }, verifyCallback(req, resolve, reject))(req, res, next);
     })
         .then(() => next())
         .catch((err) => next(err));

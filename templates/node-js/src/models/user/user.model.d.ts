@@ -1,7 +1,7 @@
-import mongoose, { Document, Model, ObjectId } from "mongoose";
+import { Document, Model, ObjectId } from "mongoose";
 
-export type UserModelType = Document & {
-    user_id: mongoose.Schema.Types.ObjectId;
+type UserModelType = Document & {
+    user_id: ObjectId;
     name: string;
     email: string;
     password: string;
@@ -13,6 +13,6 @@ export type UserModelType = Document & {
     isPasswordMatch(password: string): Promise<boolean>;
 };
 
-export type UserModelStatics = Model<UserModelType> & {
+type UserModelStatics = Model<UserModelType> & {
     isEmailTaken(email: string, excludeUserId?: ObjectId): Promise<boolean>;
 }

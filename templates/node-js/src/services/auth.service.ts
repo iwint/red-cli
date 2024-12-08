@@ -8,6 +8,7 @@ import ApiError from "../utils/api-error";
 import httpStatus from "http-status";
 import otpGenerator from "otp-generator";
 import userService from "./user.service";
+import { errorMessageConstants } from "../constants";
 
 const generateAuthToken = async (userId: any) => {
     const token = jwt.sign({ sub: userId }, envConfig.jwt.secret);
@@ -30,7 +31,7 @@ const sendVerificationEmail = async ({ email, otp }: SendEmailParams) => {
         const response = await mailTransporter.sendMail({
             from: {
                 address: env.email.from,
-                name: "Chatify",
+                name: "RED CLI",
             },
             to: email,
             subject: subject,
@@ -47,7 +48,7 @@ const sendOtp = async (user: User) => {
         throw new ApiError(httpStatus.BAD_REQUEST, "Invalid email");
     }
     const isOTPSent = saveOtp(user.email);
-    if (!isOTPSent) throw new ApiError(httpStatus.INTERNAL_SERVER_ERROR, "OTP failed. Please try again");
+    if (!isOTPSent) throw new ApiError(httpStatus.INTERNAL_SERVER_ERROR, errorMessageConstants.users.otp);
     return {
         message: `OTP sent to ${user.email}`,
         user: user,
@@ -78,7 +79,7 @@ const verifyOtp = async ({ email, otp }: SendEmailParams): Promise<boolean> => {
 const loginUserWithEmailAndPassword = async ({ email, password }: LoginRequest) => {
     const user = await userService.getUserByEmail(email);
     if (!(await user.isPasswordMatch(password))) {
-        throw new ApiError(httpStatus.UNAUTHORIZED, "Invalid password");
+        throw new ApiError(httpStatus.UNAUTHORIZED, errorMessageConstants.users.login);
     } else if (!user) {
         throw new ApiError(httpStatus.NOT_FOUND, "User not found");
     }

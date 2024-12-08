@@ -4,6 +4,7 @@ import envConfig from "./config/env";
 import mongoose from "mongoose";
 import logger from "./config/logger";
 import { Server } from "node:http";
+import swaggerDocs from "./config/swagger";
 dotenv.config();
 
 const app = ExpressConfig();
@@ -16,6 +17,7 @@ mongoose.connect(url).then(() => {
     logger.info("Connected to MongoDB");
     server = app.listen(port, () => {
         logger.info(`Listening to http://localhost:${port}`);
+        swaggerDocs(app, port);
     });
 });
 
