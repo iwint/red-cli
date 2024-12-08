@@ -1,11 +1,12 @@
 {
   "name": "red-js-cli",
-  "version": "1.0.1",
-  "description": "A command-line interface tool for generating project templates",
+  "version": "1.0.2",
+  "description": "A command-line interface tool for generating project templates for Node.js with Express, MongoDB and TypeScript and Nest.js and React and Next.js with Tailwind CSS and React Native.",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update": "npm install -g inquirer && node ./index.js"
   },
   "bin": {
     "red-js-cli": "./index.js"

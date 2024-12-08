@@ -1,18 +1,23 @@
-# Project Template Generator
+# Red CLI
 
-A lightweight and flexible CLI tool that helps you quickly scaffold new projects using predefined templates.
+A powerful and flexible CLI tool that helps you quickly scaffold modern web and mobile projects using production-ready boilerplates.
 
 ## Features
 
-- 🚀 Quick project setup
-- 📁 Multiple template support
-- ⚡️ Simple interactive interface
+- 🚀 Quick project setup with production-ready boilerplates
+- 📚 Built-in Swagger API documentation for Node.js projects
+- 🎯 Type-safe development with TypeScript support
+- 🔄 State management solutions (Zustand) pre-configured
+- 📱 Cross-platform support (Web, Mobile, Server)
+- ⚡️ Modern development setup (Vite, Next.js App Router, React Native CLI)
+- 🔍 API integration ready with React Query
 - 🛠 Customizable project structure
 
 ## Installation
 
 ```bash
 npm install -g red-js-cli
+# or clone the repository
 git clone https://github.com/iwint/red-cli.git
 ```
 
@@ -39,10 +44,38 @@ Follow the interactive prompts:
 
 ## Available Templates
 
-* Node JS
-* Next JS
-* React JS
-* React Native
+### Node.js Backend
+- TypeScript-based Express.js setup
+- Swagger API documentation
+- Authentication ready (JWT, Google OAuth)
+- MongoDB integration with Mongoose
+- Winston logger
+- Environment configuration
+- Error handling middleware
+
+### Next.js Frontend
+- App Router architecture
+- React Query for data fetching
+- Authentication setup (@react-oauth/google)
+- Payment integrations (Paddle, Razorpay)
+- Tailwind CSS with animations
+- Type-safe development
+
+### React Frontend
+- Vite + SWC for fast development
+- Material UI components
+- React Query integration
+- React Router setup
+- Toast notifications
+- Tailwind CSS styling
+
+### React Native Mobile
+- Latest React Native setup
+- Navigation (Stack & Bottom Tabs)
+- Google Sign-In integration
+- Payment gateways (Stripe, Razorpay)
+- Async Storage
+- Type-safe API calls
 
 ## Creating Custom Templates
 
