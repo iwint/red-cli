@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-    title: 'Greyfeathers Template',
-    description: 'Greyfeathers Template',
+    title: 'Red ClI Next Js',
+    description: 'Red CLI with Next.js',
 };
 
 export default function RootLayout({
