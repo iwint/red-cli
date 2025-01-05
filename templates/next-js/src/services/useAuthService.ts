@@ -2,7 +2,6 @@
 
 import { useSendData } from '@/api/helper';
 import { request } from '@/api/request';
-import { useGoogleLogin } from '@react-oauth/google';
 import toast from 'react-hot-toast';
 import Cookie from 'js-cookie';
 
@@ -35,9 +34,9 @@ export const useAuthService = () => {
     });
 
     //* This function is used to handle the Google login
-    const handleGoogleLogin = useGoogleLogin({
-        onSuccess: async response => login(response),
-    });
+    // const handleGoogleLogin = useGoogleLogin({
+    //     onSuccess: async response => login(response),
+    // });
 
-    return { handleGoogleLogin, isLoginPending };
+    return { login, isLoginPending };
 };

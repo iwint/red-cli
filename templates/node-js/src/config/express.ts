@@ -2,7 +2,7 @@ import express, { Application } from "express";
 import compression from "compression";
 import cookieParser from "cookie-parser";
 import routes from "../routes";
-import { errorConverter, errorHandler } from "../middlewares/error";
+import { errorConverter, errorHandler } from "../middlewares/error.mw";
 import envConfig from "./env";
 import morgan from "./morgan";
 import cors from "cors";
