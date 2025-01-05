@@ -1,6 +1,6 @@
 {
   "name": "red-js-cli",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A command-line interface tool for generating project templates for Node.js with Express, MongoDB and TypeScript and Nest.js and React and Next.js with Tailwind CSS and React Native.",
   "main": "index.js",
   "type": "module",
