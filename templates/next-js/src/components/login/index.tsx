@@ -1,16 +1,9 @@
 'use client';
 
-import { useAuthService } from '@/services/useAuthService';
-import { Button } from '../ui/button';
-
 const LoginSection: React.FC = () => {
-    const { login, isLoginPending } = useAuthService();
-
     return (
-        <div className="flex  gap-4">
-            <Button disabled={isLoginPending} onClick={() => login({})}>
-                Login with Google
-            </Button>
+        <div className="flex  gap-4 bg-black h-screen items-center justify-center">
+            <div className="text-white">Hello World!</div>
         </div>
     );
 };

@@ -1,5 +1,7 @@
 # Dependencies
 node_modules/
+dist/
+build/
 
 # yarn error logs
 yarn-error.log

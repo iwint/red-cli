@@ -1,10 +1,10 @@
 import dotenv from "dotenv";
-import ExpressConfig from "./config/express";
 import envConfig from "./config/env";
 import mongoose from "mongoose";
 import logger from "./config/logger";
 import { Server } from "node:http";
 import swaggerDocs from "./config/swagger";
+import ExpressConfig from "./app";
 dotenv.config();
 
 const app = ExpressConfig();

@@ -25,7 +25,7 @@ if (error) {
     throw new Error(`Env Configuration validation error: ${error.message}`);
 }
 
-export default {
+const envConfig = {
     env: ENV_VARS.NODE_ENV,
     port: ENV_VARS.PORT,
     database: {
@@ -54,3 +54,6 @@ export default {
         title: ENV_VARS.APP_TITLE,
     },
 };
+
+
+export default envConfig;

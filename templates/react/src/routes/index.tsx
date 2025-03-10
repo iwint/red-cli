@@ -1,8 +1,8 @@
-import Home from "@/pages/home";
+import Home from '@/pages/home';
 
 export const Routes = [
-  {
-    path: "/",
-    element: <Home />,
-  },
+    {
+        path: '/',
+        element: <Home />,
+    },
 ];
